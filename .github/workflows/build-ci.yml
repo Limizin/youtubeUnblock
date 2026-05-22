@@ -229,6 +229,7 @@ jobs:
           SHA: ${{ needs.prepare.outputs.sha }}
         working-directory: /builder
         run: |
+          cat setup.sh
           HOME=/builder ./setup.sh
 
       - name: Add signing key
