@@ -229,7 +229,14 @@ jobs:
           SHA: ${{ needs.prepare.outputs.sha }}
         working-directory: /builder
         run: |
-          cat setup.sh
+          echo "=== Текущая директория ==="
+          pwd
+          echo "=== Список файлов ==="
+          ls -la
+          echo "=== Поиск setup.sh ==="
+          find . -name "setup.sh" 2>/dev/null || echo "Файл не найден"
+          echo "=== Содержимое setup.sh (если есть) ==="
+          cat setup.sh 2
           HOME=/builder ./setup.sh
 
       - name: Add signing key
