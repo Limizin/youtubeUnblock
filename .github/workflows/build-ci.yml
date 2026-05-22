@@ -169,16 +169,11 @@ jobs:
         branch:
           - openwrt-23.05
         include:
-          - branch: openwrt-25.12
-            package_extension: apk
           - branch: openwrt-23.05
             package_extension: ipk
         arch:
           - aarch64_cortex-a53
           - x86_64
-        exclude:
-          - branch: openwrt-25.12
-            arch: mips_4kec
     container:
       image: openwrt/sdk:${{ matrix.arch }}-${{ matrix.branch }}
       options: --user root
@@ -249,12 +244,9 @@ jobs:
       matrix:
         branch:
           - openwrt-23.05
-          - openwrt-25.12
         arch:
           - x86_64
         include:
-          - branch: openwrt-25.12
-            package_extension: apk
           - branch: openwrt-23.05
             package_extension: ipk
     container:
