@@ -227,16 +227,10 @@ jobs:
           VERSION: ${{ needs.prepare.outputs.version }}
           RELEASE: ${{ needs.prepare.outputs.release }}
           SHA: ${{ needs.prepare.outputs.sha }}
+          TARGET: ${{ matrix.arch }}
+          VERSION_PATH: releases/23.05.6
         working-directory: /builder
         run: |
-          echo "=== Текущая директория ==="
-          pwd
-          echo "=== Список файлов ==="
-          ls -la
-          echo "=== Поиск setup.sh ==="
-          find . -name "setup.sh" 2>/dev/null || echo "Файл не найден"
-          echo "=== Содержимое setup.sh (если есть) ==="
-          cat setup.sh 2
           HOME=/builder ./setup.sh
 
       - name: Add signing key
