@@ -168,7 +168,6 @@ jobs:
       matrix:
         branch:
           - openwrt-23.05
-          - openwrt-25.12
         include:
           - branch: openwrt-25.12
             package_extension: apk
@@ -183,8 +182,6 @@ jobs:
           - arm_cortex-a15_neon-vfpv4
           - arm_cortex-a5_vfpv4
           - arm_cortex-a7
-          - arm_cortex-a7_neon-vfpv4
-          - arm_cortex-a7_vfpv4
           - arm_cortex-a8_vfpv3
           - arm_fa526
           - arm_xscale
