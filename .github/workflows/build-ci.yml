@@ -167,12 +167,12 @@ jobs:
     strategy:
       matrix:
         branch:
-          - openwrt-24.10
+          - openwrt-23.05
           - openwrt-25.12
         include:
           - branch: openwrt-25.12
             package_extension: apk
-          - branch: openwrt-24.10
+          - branch: openwrt-23.05
             package_extension: ipk
         arch:
           - aarch64_cortex-a53
@@ -270,14 +270,14 @@ jobs:
     strategy:
       matrix:
         branch:
-          - openwrt-24.10
+          - openwrt-23.05
           - openwrt-25.12
         arch:
           - x86_64
         include:
           - branch: openwrt-25.12
             package_extension: apk
-          - branch: openwrt-24.10
+          - branch: openwrt-23.05
             package_extension: ipk
     container:
       image: openwrt/sdk:${{ matrix.arch }}-${{ matrix.branch }}
